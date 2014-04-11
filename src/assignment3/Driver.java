@@ -11,14 +11,15 @@ public class Driver {
 		final long startTime = System.currentTimeMillis();
 		
 		String queryFile = "Resource/Queries/Training-Data-2014";
-		String outputFile = "Resource/Queries/Training-Data-2014-tweet-data";
-		int numberOfDaysToCrawlBeforeActualMatch = 4;
-		int numberOfDaysToCrawlAfterActualMatch = 3;
+		String baseDirectory = "Resource/Result";
+		
+		int numberOfDaysToCrawlBeforeActualMatch = 5;
+		int numberOfDaysToCrawlAfterActualMatch = 0;
 
 		try {
-			FileHelper.theUltimate(queryFile, outputFile,
+			FileHelper.theUltimate(queryFile,
 					numberOfDaysToCrawlBeforeActualMatch,
-					numberOfDaysToCrawlAfterActualMatch);
+					numberOfDaysToCrawlAfterActualMatch, baseDirectory);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (JSONException e) {
